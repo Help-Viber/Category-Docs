@@ -2,6 +2,8 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+const isDevelopment = process.env.NODE_ENV === 'development';
+
 const config: Config = {
   title: 'HelpViber',
   tagline: 'Configuration & Integration Guides',
@@ -26,6 +28,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          routeBasePath: isDevelopment ? 'guides' : '',
         },
         blog: false, // Disable blog completely
         theme: {
