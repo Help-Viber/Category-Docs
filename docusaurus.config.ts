@@ -8,7 +8,7 @@ console.log('Docusaurus building in mode:', process.env.NODE_ENV || 'development
 const config: Config = {
   title: 'HelpViber',
   tagline: 'Configuration & Integration Guides',
-  favicon: 'img/helpviber-icon.svg',
+  favicon: '/img/helpviber-icon.svg',
 
   url: 'https://help-viber.github.io',
   baseUrl: isDevelopment ? '/' : '/Guides/',
@@ -44,7 +44,7 @@ const config: Config = {
       title: 'HelpViber',
       logo: {
         alt: 'HelpViber Logo',
-        src: 'img/helpviber-icon.svg',
+        src: '/img/helpviber-icon.svg',
       },
       items: [
         {
