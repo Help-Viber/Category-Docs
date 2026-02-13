@@ -1,0 +1,252 @@
+/**
+ * Any CSS included here will be global. The variable names search are
+ * prefixed with "ifm-".
+ *
+ * See https://docusaurus.io/docs/api/themes/configuration#styling-your-site
+ * for more information.
+ */
+
+/* Design Tokens */
+:root {
+    --background-hsl: 0 0% 100%;
+    --foreground-hsl: 222 47% 11%;
+    --muted-foreground-hsl: 215 16% 47%;
+    --border-hsl: 214 32% 91%;
+
+    --primary-hsl: 222 80% 58%;
+    --accent-hsl: 270 60% 65%;
+    --radius: 0.5rem;
+
+    --ifm-color-primary: hsl(var(--primary-hsl));
+    --ifm-color-primary-dark: hsl(222 80% 50%);
+    --ifm-color-primary-darker: hsl(222 80% 45%);
+    --ifm-color-primary-darkest: hsl(222 80% 35%);
+    --ifm-color-primary-light: hsl(222 80% 65%);
+    --ifm-color-primary-lighter: hsl(222 80% 70%);
+    --ifm-color-primary-lightest: hsl(222 80% 80%);
+
+    --ifm-background-color: hsl(var(--background-hsl));
+    --ifm-font-color-base: hsl(var(--foreground-hsl));
+    --ifm-navbar-background-color: hsl(var(--background-hsl));
+
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+    --background-hsl: 222 47% 11%;
+    --foreground-hsl: 210 40% 98%;
+    --muted-foreground-hsl: 215 20% 65%;
+    --border-hsl: 217 33% 18%;
+
+    --ifm-background-color: hsl(var(--background-hsl));
+    --ifm-font-color-base: hsl(var(--foreground-hsl));
+    --ifm-navbar-background-color: hsl(var(--background-hsl));
+
+    --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
+}
+
+/* Layout Customizations */
+.navbar {
+    border-bottom: 1px solid hsl(var(--border-hsl));
+    height: 4rem;
+    /* Fixed height for consistency */
+}
+
+.navbar__inner {
+    height: 100%;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.navbar__brand {
+    margin-right: 2rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    /* Ensure no extra line height pushing down */
+}
+
+.navbar__logo {
+    height: 2rem;
+    margin-right: 0.75rem;
+}
+
+.main-wrapper {
+    padding: 1rem 0;
+}
+
+.container {
+    max-width: none !important;
+    padding: 0 1.5rem;
+}
+
+/* CTA Button Styles */
+.navbar-signup {
+    border: 1px solid #22c55e !important;
+    color: #16a34a !important;
+    background-color: white !important;
+    border-radius: var(--radius);
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+    padding: 0.5rem 1rem !important;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+    /* Increased gap from theme toggle */
+}
+
+.navbar-signup:hover {
+    background-color: #22c55e !important;
+    color: white !important;
+    text-decoration: none !important;
+}
+
+[data-theme='dark'] .navbar-signup {
+    background-color: transparent !important;
+}
+
+/* Typography */
+h1 {
+    font-size: 1.875rem;
+    /* text-3xl */
+    font-weight: 700;
+    color: hsl(var(--foreground-hsl));
+}
+
+.markdown>p,
+.markdown>ul,
+.markdown>ol {
+    font-size: 1.125rem;
+    /* text-lg */
+    color: hsla(var(--foreground-hsl) / 0.9);
+}
+
+.markdown>h2 {
+    font-size: 1.5rem;
+    /* text-2xl */
+    font-weight: 700;
+    border-top: 1px solid hsl(var(--border-hsl));
+    padding-top: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* FAQ Accordion Styling */
+details {
+    border: 1px solid hsl(var(--border-hsl));
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+    padding: 0.5rem 1.75rem;
+    background-color: hsla(var(--primary-hsl) / 0.05);
+    transition: all 0.2s ease;
+}
+
+details[open] {
+    background-color: hsla(var(--primary-hsl) / 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+summary {
+    font-weight: 600;
+    cursor: pointer;
+    padding: 1rem 0;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    list-style: none !important;
+    list-style-type: none !important;
+}
+
+summary::-webkit-details-marker,
+summary::marker,
+summary::before {
+    display: none !important;
+    content: "" !important;
+}
+
+summary h3 {
+    margin: 0 !important;
+    font-size: 1.25rem !important;
+    font-weight: 600 !important;
+    color: inherit !important;
+    display: inline-block !important;
+    flex: 1;
+    /* Take up available space */
+}
+
+/* Hide Docusaurus heading anchor link inside summary */
+summary h3 a.hash-link {
+    display: none !important;
+}
+
+summary::after {
+    content: '';
+    width: 0.6rem;
+    height: 0.6rem;
+    border-right: 2px solid #64748b;
+    /* Grey color (slate-500) */
+    border-bottom: 2px solid #64748b;
+    transform: rotate(-45deg);
+    /* Pointing right */
+    transition: transform 0.2s ease-in-out;
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+}
+
+details[open] summary::after {
+    transform: rotate(45deg);
+    /* Pointing down when open */
+}
+
+details p,
+details ul {
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* Sidebar Styling */
+.theme-doc-sidebar-container {
+    border-right: 1px solid hsl(var(--border-hsl));
+    width: 320px !important;
+    position: sticky;
+    top: 4rem;
+    height: calc(100vh - 4rem);
+}
+
+/* Force inner sidebar menu to align with breadcrumbs */
+[class^='sidebar_'] {
+    padding-top: 16px !important;
+}
+
+/* TOC (Table of Contents) Styling */
+.theme-doc-toc-desktop {
+    width: 300px !important;
+    flex: 0 0 200px !important;
+    margin-left: auto;
+    /* Push to the right of its column */
+}
+
+/* Expand the main container to allow TOC to move further right */
+.docs-doc-page .container {
+    max-width: 1400px !important;
+}
+
+/* Ensure the main content area can occupy the expanded container */
+[class^='docMainContainer_'] {
+    max-width: none !important;
+}
+
+.markdown>*:last-child {
+    margin-bottom: 0 !important;
+    align-items: center;
+    text-align: center;
+}

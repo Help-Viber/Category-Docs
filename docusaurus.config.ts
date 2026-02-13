@@ -3,9 +3,9 @@ import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'HelpViber Documentation',
+  title: 'HelpViber',
   tagline: 'Configuration & Integration Guides',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/helpviber-icon.svg',
 
   url: 'https://help-viber.github.io',
   baseUrl: process.env.NODE_ENV === 'development' ? '/' : '/Category-Docs/',
@@ -37,18 +37,17 @@ const config: Config = {
 
   themeConfig: {
     navbar: {
-      title: 'HelpViber Docs',
+      title: 'HelpViber',
+      logo: {
+        alt: 'HelpViber Logo',
+        src: 'img/helpviber-icon.svg',
+      },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'docs',
-          position: 'left',
-          label: 'Documentation',
-        },
-        {
-          href: 'https://github.com/Help-Viber/Category-Docs',
-          label: 'GitHub',
+          href: 'https://viber.helpviber.com',
+          label: 'Sign up as viber',
           position: 'right',
+          className: 'button button--primary navbar-signup',
         },
       ],
     },
