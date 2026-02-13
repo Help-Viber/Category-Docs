@@ -2,7 +2,8 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
-const isDevelopment = process.env.NODE_ENV === 'development';
+const isDevelopment = process.env.NODE_ENV === 'development' || !process.env.NODE_ENV;
+console.log('Docusaurus building in mode:', process.env.NODE_ENV || 'development (default)');
 
 const config: Config = {
   title: 'HelpViber',
@@ -10,10 +11,10 @@ const config: Config = {
   favicon: 'img/helpviber-icon.svg',
 
   url: 'https://help-viber.github.io',
-  baseUrl: process.env.NODE_ENV === 'development' ? '/' : '/Category-Docs/',
+  baseUrl: isDevelopment ? '/' : '/Guides/',
 
   organizationName: 'Help-Viber',
-  projectName: 'Category-Docs',
+  projectName: 'Guides',
 
   onBrokenLinks: 'throw',
 
