@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkcategory_docs=globalThis.webpackChunkcategory_docs||[]).push([[583],{6866(a,o,c){c.r(o),c.d(o,{default:()=>r});c(6540);var s=c(6347),t=c(4848);function r(){return(0,t.jsx)(s.rd,{to:"/docs/database-configuration"})}}}]);
